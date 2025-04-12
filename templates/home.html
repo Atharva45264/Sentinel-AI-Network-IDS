@@ -1,0 +1,51 @@
+{% extends "index.html" %} {% block content %}
+<video autoplay muted loop id="bg-video">
+  <source
+    src="{{ url_for('static', filename='myvideo.mp4') }}"
+    type="video/mp4"
+  />
+  Your browser does not support HTML5 video.
+</video>
+<div class="container position-relative z-1">
+  <div class="container">
+    <h1>Scan Your Network for Anomalies</h1>
+    <p>Click the button below to start scanning.</p>
+
+    <!-- Scan Button with Spinner -->
+    <button id="scan-btn">
+      <span
+        class="spinner-border spinner-border-sm d-none"
+        id="loading-spinner"
+      ></span>
+      Scan Network
+    </button>
+
+    <p id="result"></p>
+
+    <div
+      class="container mt-5 pt-5 chart-container d-flex flex-wrap justify-content-between gap-4"
+      style="display: none"
+    >
+      <div
+        class="p-3 bg-light rounded shadow flex-grow-1 chart-box"
+        style="min-width: 45%; max-width: 48%"
+      >
+        <h4 class="text-center mb-3 chart-title">Live Network Traffic</h4>
+        <canvas id="lineChart" height="300"></canvas>
+      </div>
+      <div
+        class="p-3 bg-light rounded shadow flex-grow-1 chart-box"
+        style="min-width: 45%; max-width: 48%"
+      >
+        <h4 class="text-center mb-3 chart-title">Anomaly Distribution</h4>
+        <canvas id="anomalyPieChart" height="300"></canvas>
+      </div>
+    </div>
+
+    <!-- Close Button -->
+    <button id="close-btn" class="btn btn-danger mt-4" style="display: none">
+      Close
+    </button>
+  </div>
+</div>
+{% endblock %}

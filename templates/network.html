@@ -1,0 +1,235 @@
+{% extends "index.html" %}
+
+{% block title %}Network Information{% endblock %}
+
+{% block content %}
+<style>
+    body {
+            background: linear-gradient(135deg, white, white);
+            color: rgb(95, 52, 223);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #ff416c(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .content-container {
+            padding-top: 180px;
+        }
+        .content-container h1 {
+            font-size: 3rem;
+        }
+        .content-container p{
+            font-size: 1rem;
+        }
+
+        /* Card Styling */
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body i {
+            transition: transform 0.3s;
+        }
+
+        .card-body:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Collapse Section */
+        .collapse .card-body {
+            border-radius: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Gutter Styling */
+        .gutter-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .gutter-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Fade Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+<div class="container content-container">
+    <h1 class="text-center mb-4" data-aos="fade-down">Network Information</h1>
+    <p class="text-center mb-5" data-aos="fade-up">Find details about network security, packet analysis, and anomaly detection.</p>
+
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-3 mb-4" data-aos="zoom-in">
+            <div class="card text-center p-3 shadow-lg">
+                <div class="card-body">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Network Security</h5>
+                    <p class="card-text">Protect your network from unauthorized access and attacks.</p>
+                    <button class="btn btn-primary learn-more-btn" data-target="#collapseSecurity">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-3 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card text-center p-3 shadow-lg">
+                <div class="card-body">
+                    <i class="fas fa-network-wired fa-3x text-danger mb-3"></i>
+                    <h5 class="card-title">Packet Analysis</h5>
+                    <p class="card-text">Analyze data packets to identify vulnerabilities.</p>
+                    <button class="btn btn-primary learn-more-btn" data-target="#collapsePacket">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-3 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card text-center p-3 shadow-lg">
+                <div class="card-body">
+                    <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Anomaly Detection</h5>
+                    <p class="card-text">Detect unusual patterns in network traffic.</p>
+                    <button class="btn btn-primary learn-more-btn" data-target="#collapseAnomaly">Learn More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-3 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card text-center p-3 shadow-lg">
+                <div class="card-body">
+                    <i class="fas fa-user-secret fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Threat Prevention</h5>
+                    <p class="card-text">Proactively block threats before they affect your system.</p>
+                    <button class="btn btn-primary learn-more-btn" data-target="#collapseThreat">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapsible Sections -->
+    <div class="mt-4">
+        <div class="collapse" id="collapseSecurity">
+            <div class="card card-body bg-primary text-white shadow-lg">
+                <h5>Network Security</h5>
+                <p>Network security includes firewalls, encryption, and secure protocols to prevent cyber threats.</p>
+            </div>
+        </div>
+
+        <div class="collapse" id="collapsePacket">
+            <div class="card card-body bg-danger text-white shadow-lg">
+                <h5>Packet Analysis</h5>
+                <p>Packet analysis involves capturing and inspecting network packets to detect malicious activity.</p>
+            </div>
+        </div>
+
+        <div class="collapse" id="collapseAnomaly">
+            <div class="card card-body bg-warning text-dark shadow-lg">
+                <h5>Anomaly Detection</h5>
+                <p>Advanced anomaly detection systems identify abnormal patterns and potential intrusions.</p>
+            </div>
+        </div>
+
+        <div class="collapse" id="collapseThreat">
+            <div class="card card-body bg-success text-white shadow-lg">
+                <h5>Threat Prevention</h5>
+                <p>Preventative measures such as intrusion detection and prevention systems help mitigate cyber threats.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gutter Info Cards -->
+    <div class="row mt-5">
+        <div class="col-md-3" data-aos="fade-up">
+            <div class="gutter-container">
+                <h5>FCCN in Network Anomaly Detection</h5>
+                <p>Fully Connected Convolutional Networks anomaly detection by capturing spatial patterns </p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="gutter-container">
+                <h5>Neural Networks for Intrusion Detection</h5>
+                <p>Neural networks detect network intrusions by learning patterns of normal and abnormal traffic.</p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="gutter-container">
+                <h5>Real-Time Anomaly Detection</h5>
+                <p>AI-based models allow proactive real-time traffic monitoring to reduce risks instantly.</p>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="gutter-container">
+                <h5>Enhancing Cybersecurity with AI</h5>
+                <p>Machine learning helps detect subtle anomalies, providing adaptive security for your network.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+
+    document.querySelectorAll('.learn-more-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const target = document.querySelector(targetId);
+
+            // Toggle current collapse
+            if (target.classList.contains('show')) {
+                bootstrap.Collapse.getInstance(target)?.hide();
+            } else {
+                // Hide any other open collapses
+                document.querySelectorAll('.collapse.show').forEach(open => {
+                    bootstrap.Collapse.getInstance(open)?.hide();
+                });
+                new bootstrap.Collapse(target, {
+                    toggle: true
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+
+
+
+

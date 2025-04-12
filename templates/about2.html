@@ -1,0 +1,180 @@
+{% extends "index.html" %}
+
+{% block title %}About - Network Anomaly Detection{% endblock %}
+{% block head %}
+    <style>
+        /* General styling for the upper section */
+        #about {
+            background-color: #f8f9fa; /* Light background color */
+            padding: 60px 0; /* Add padding to top and bottom */
+            color: #333; /* Dark text color for readability */
+        }
+
+        #about h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #007bff; /* Primary blue color */
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.25rem;
+            color: #555; /* Slightly lighter gray text */
+        }
+
+        /* Card Styling for the individual sections */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Background Color for Cards and Animations */
+        .card-body {
+            background-color: #ffffff; /* White background for card body */
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .card-text {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        .animate__animated {
+            animation-duration: 1s;
+        }
+
+        /* Make sure the navbar doesn't cover the top part */
+        body {
+            padding-top:350px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+   <!-- About Section with animation -->
+    <section id="about" class="container mt-5">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h1 class="display-4 text-primary animate__animated animate__fadeInUp">About This Project</h1>
+                <p class="lead text-muted animate__animated animate__fadeInUp">This project aims to detect network anomalies using machine learning techniques.</p>
+            </div>
+        </div>
+
+        <!-- Card for project details -->
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Objective</h5>
+                        <p class="card-text">The goal of this project is to identify and alert users about any abnormal network behavior, such as Distributed Denial of Service (DDoS) attacks, port scanning, and unauthorized data exfiltration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Technology Stack</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-success"></i> Python</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Flask</li>
+                            <li><i class="bi bi-check-circle text-success"></i> TensorFlow</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Bootstrap</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Machine Learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Key Features</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-success"></i> Real-time network packet capture</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Anomaly detection using a trained machine learning model</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Flask web interface for easy interaction</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Scalable and easily extendable for additional features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated introduction with background color -->
+        <div class="row mt-5 text-center">
+            <div class="col-12">
+                <div class="bg-primary text-white p-5 rounded-lg animate__animated animate__zoomIn">
+                    <h2>How Scanning and Anomaly Detection Work</h2>
+                    <p class="lead">This section explains how the network scanning and anomaly detection process works in real-time, ensuring a robust security mechanism.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed process steps -->
+        <div class="row mt-5">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 1: Network Packet Capture</h5>
+                        <p class="card-text">The process starts by capturing live network packets using **Wireshark** or **tcpdump**, depending on your system configuration. The packets include various network behaviors such as source/destination IP, packet size, protocol, and more.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 2: Preprocessing</h5>
+                        <p class="card-text">Captured packets are preprocessed by converting the raw data into structured information. This includes converting timestamps into seconds and one-hot encoding categorical values like protocols, ensuring the data is ready for the model.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 3: Feature Scaling</h5>
+                        <p class="card-text">The feature values are then normalized using **StandardScaler** to ensure all features have equal influence on the model. This helps the model learn more effectively and improves performance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 4: Model Prediction</h5>
+                        <p class="card-text">The preprocessed data is fed into a **trained machine learning model**, which uses deep learning algorithms (such as a neural network). The model predicts whether the observed network traffic is normal or anomalous based on patterns learned during training.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 1s;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Step 5: Anomaly Detection</h5>
+                        <p class="card-text">If the model detects an anomaly, it flags the network traffic and outputs the anomaly count. The detected anomalies could include suspicious behaviors such as a potential DDoS attack or unusual data transfer patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional section about project importance -->
+        <div class="row mt-5 text-center">
+            <div class="col-12">
+                <div class="bg-light p-5 rounded-lg animate__animated animate__zoomIn">
+                    <h3>Why Is This Important?</h3>
+                    <p class="lead">Network anomalies can often indicate a security breach or attack, which can lead to data loss or downtime. Detecting these anomalies in real-time ensures timely response and protects sensitive information.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

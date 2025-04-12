@@ -1,0 +1,187 @@
+/* Root variables for easy theming */
+:root {
+    --bg-default: #ff4d4d; /* Default red before scanning */
+    --bg-scanned: #28a745; /* Green after scanning */
+    --bg-dark: #121212; /* Dark mode background */
+    --text-light: #ffffff;
+    --text-dark: #000000;
+}
+
+/* Apply default background */
+body {
+    background-color: var(--bg-default);
+    color: var(--text-dark);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Scanned background */
+body.scanned {
+    background-color: var(--bg-scanned) !important;
+    color: white;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-light);
+}
+
+/* Navbar styles */
+.navbar {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white !important;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white !important;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffd700 !important;
+    transform: scale(1.1);
+}
+
+/* Dark mode button */
+#toggle-theme {
+    border-radius: 20px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#toggle-theme:hover {
+    background: white;
+    color: black;
+}
+
+/* Center home page content */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.container h1 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.container p{
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Scan button */
+#scan-btn {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#scan-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(137deg, #ff4b2b, #ff416c);
+}
+
+#close-btn {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#close-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(137deg, #ff4b2b, #ff416c);
+}
+
+/* Adjust scanned mode dark theme */
+body.dark-mode.scanned {
+    background-color: rgb(0, 72, 0) !important;
+}
+
+.chart-container {
+    width: 100%;
+    margin-top: 80px; /* Ensure it's not hidden under the navbar */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.chart-box {
+    background-color: #df4c3b;
+    flex: 1 1 45%;
+    min-height: 400px;
+    max-height: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .chart-box {
+    background-color: gray;
+    color: #db2222;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color:#ff4b2b
+}
+
+canvas {
+    width: 100% !important;
+    height: 350px !important;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .z-1 {
+    position: relative;
+    z-index: 1;
+  }
+
+
+
+
