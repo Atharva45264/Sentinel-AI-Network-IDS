@@ -1,11 +1,4 @@
 {% extends "index.html" %} {% block content %}
-<video autoplay muted loop id="bg-video">
-  <source
-    src="{{ url_for('static', filename='myvideo.mp4') }}"
-    type="video/mp4"
-  />
-  Your browser does not support HTML5 video.
-</video>
 <div class="container position-relative z-1">
   <div class="container">
     <h1>Scan Your Network for Anomalies</h1>
@@ -20,7 +13,7 @@
       Scan Network
     </button>
 
-    <p id="result"></p>
+    <p id="result"></p> 
 
     <div
       class="container mt-5 pt-5 chart-container d-flex flex-wrap justify-content-between gap-4"

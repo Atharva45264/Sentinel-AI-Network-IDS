@@ -1,29 +1,20 @@
-/* Root variables for easy theming */
-:root {
-    --bg-default: #ff4d4d; /* Default red before scanning */
-    --bg-scanned: #28a745; /* Green after scanning */
-    --bg-dark: #121212; /* Dark mode background */
-    --text-light: #ffffff;
-    --text-dark: #000000;
-}
-
 /* Apply default background */
 body {
-    background-color: var(--bg-default);
-    color: var(--text-dark);
+    background-color: #ff4d4d;
+    color: #000000;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 /* Scanned background */
 body.scanned {
-    background-color: var(--bg-scanned) !important;
+    background-color: #28a745 !important;
     color: white;
 }
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: var(--bg-dark) !important;
-    color: var(--text-light);
+    background-color: #000000 !important;
+    color: white;
 }
 
 /* Navbar styles */
