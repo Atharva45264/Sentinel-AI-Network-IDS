@@ -59,7 +59,7 @@ body.dark-mode {
 
 #toggle-theme:hover {
     background: white;
-    color: black;
+    color: white;
 }
 
 /* Center home page content */
@@ -75,12 +75,21 @@ body.dark-mode {
 
 .container h1 {
     font-size: 3rem;
-    color: #ffffff;
+    color: #000000;
 }
 
-.container p{
+.container p {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #000000;
+}
+
+/* Dark Mode Specific Text Colors */
+.dark-mode .container h1 {
+    color: azure; /* Change this to your preferred color for dark mode */
+}
+
+.dark-mode .container p {
+    color: azure; /* Change this to your preferred color for dark mode */
 }
 
 /* Scan button */
@@ -114,6 +123,14 @@ body.dark-mode {
 #close-btn:hover {
     transform: scale(1.1);
     background: linear-gradient(137deg, #ff4b2b, #ff416c);
+}
+
+.dark-mode.container h1{
+    color: azure;
+}
+
+.dark-mode.container p{
+    color: azure;
 }
 
 /* Adjust scanned mode dark theme */
