@@ -5,13 +5,13 @@
 {% block content %}
 <style>
     body {
-        background: white;
-        color: blueviolet;
+        background-color: white; /* Deep blue-gray */
+        font-size: 1.5rem;
         min-height: 100vh;
         overflow-x: hidden;
+        color: black; /* Default text color */
     }
 
-    /* Fixed Navbar */
     .navbar {
         position: fixed;
         top: 0;
@@ -23,81 +23,71 @@
     }
 
     .content-container {
-        padding-top: 180px;
+        padding-top: 160px;
     }
 
-    .content-container h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        color: black;
-    }
-
+    .content-container h1,
     .content-container p {
-        font-size: 1.1rem;
-        color: black;
+        color:#ff4d4d;
     }
 
-    /* Card Styling */
     .card {
-        background: white;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: white; /* dark card */
+        border: 1px solid #334155;
         border-radius: 15px;
-        backdrop-filter: blur(8px);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        color: #f0f0f0;
+        color: white;
     }
 
-    .card-title {
-        color: #000 !important;
-        font-weight: 600;
+    .card-title,
+    .card-body h5,
+    .card-body p {
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 500;;
     }
 
     .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
     .card-body i {
         transition: transform 0.3s;
     }
 
-    .card-body h5 {
-        color: #000 !important;
-        font-weight: 600;
-    }
-
     .card-body:hover i {
         transform: scale(1.2);
     }
 
-    /* Collapse Section */
     .collapse .card-body {
         border-radius: 10px;
         animation: fadeIn 0.5s ease-in-out;
     }
 
-    /* Gutter Styling */
     .gutter-container {
-        background:white;
+        background-color: white;
         padding: 20px;
         border-radius: 15px;
         margin-top: 20px;
+        color: white;
+        border: 1px solid #334155;
         transition: all 0.3s ease;
-        color: #f0f0f0;
-        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .gutter-container h5 {
-        color: #000 !important;
-        font-weight: 600;
+    .gutter-container h5,
+    .gutter-container p,
+    .gutter-container span {
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 500;
     }
 
     .gutter-container:hover {
         transform: scale(1.02);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
-    /* Fade Animation */
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -109,47 +99,52 @@
         }
     }
 
-    /* Light mode - default styles */
-    .gutter-container p,
-    .gutter-container h5,
-    .gutter-container span,
-    .card-body p,
-    .card-body h5 {
-        color: white !important;
-    }
-
-    .card {
-        background: rgba(255, 255, 255, 1);
-    }
-
-    /* Dark mode overrides */
     @media (prefers-color-scheme: dark) {
         body {
-            background-color: #121212;
-            color: #fff;
-        }
-
-        .card {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .gutter-container {
-            background: rgba(0, 0, 0, 0.1);
-            color: #fff;
-        }
-
-        .gutter-container p,
-        .gutter-container h5,
-        .gutter-container span,
-        .card-body p,
-        .card-body h5 {
-            color: #fff !important;
-        }
-
-        .card-title {
-            color: #fff !important;
+            background-color: white;
+            color: black;
         }
     }
+
+    /* 🔧 Dark mode for card */
+body.dark-mode .card {
+    background-color: #1e1e1e; /* Dark card background */
+    color: #f0f0f0; /* Light text */
+    border-color: #555; /* Softer border */
+}
+
+body.dark-mode .card-title,
+body.dark-mode .card-body h5,
+body.dark-mode .card-body p {
+    color: #f0f0f0; /* Make card text readable in dark mode */
+}
+
+/* 🔧 Dark mode for gutter container */
+body.dark-mode .gutter-container {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode .gutter-container h5,
+body.dark-mode .gutter-container p,
+body.dark-mode .gutter-container span {
+    color: #dddddd; /* Soft white for dark background */
+}
+
+/* 🔧 Default collapse style (light mode) */
+.collapse .card-body {
+    background-color: #2c4bc7; /* light background */
+    color: #000000; /* dark text */
+}
+
+/* 🌙 Dark mode collapse style */
+body.dark-mode .collapse .card-body {
+    background-color: #0040ff; /* dark background */
+    color: #f0f0f0; /* light text */
+}
+
+
 </style>
 
 <div class="container content-container">
@@ -209,28 +204,28 @@
     <!-- Collapsible Sections -->
     <div class="mt-4">
         <div class="collapse" id="collapseSecurity">
-            <div class="card card-body bg-dark text-info shadow-lg">
+            <div class="card card-body text-info shadow-lg">
                 <h5>Network Security</h5>
                 <p>Network security includes firewalls, encryption, and secure protocols to prevent cyber threats.</p>
             </div>
         </div>
 
         <div class="collapse" id="collapsePacket">
-            <div class="card card-body bg-dark text-danger shadow-lg">
+            <div class="card card-body text-danger shadow-lg">
                 <h5>Packet Analysis</h5>
                 <p>Packet analysis involves capturing and inspecting network packets to detect malicious activity.</p>
             </div>
         </div>
 
         <div class="collapse" id="collapseAnomaly">
-            <div class="card card-body bg-dark text-warning shadow-lg">
+            <div class="card card-body text-warning shadow-lg">
                 <h5>Anomaly Detection</h5>
                 <p>Advanced anomaly detection systems identify abnormal patterns and potential intrusions.</p>
             </div>
         </div>
 
         <div class="collapse" id="collapseThreat">
-            <div class="card card-body bg-dark text-success shadow-lg">
+            <div class="card card-body text-success shadow-lg">
                 <h5>Threat Prevention</h5>
                 <p>Preventative measures such as intrusion detection and prevention systems help mitigate cyber threats.</p>
             </div>
@@ -241,26 +236,26 @@
     <div class="row mt-5">
         <div class="col-md-3" data-aos="fade-up">
             <div class="gutter-container">
-                <h5>FCCN in Network Anomaly Detection</h5>
+                <h5>FCCN in Network Anomaly</h5>
                 <p>Fully Connected Convolutional Networks anomaly detection by capturing spatial patterns</p>
             </div>
         </div>
         <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
             <div class="gutter-container">
-                <h5>Neural Networks for Intrusion Detection</h5>
+                <h5>Neural Networks for IDS</h5>
                 <p>Neural networks detect network intrusions by learning patterns of normal and abnormal traffic.</p>
             </div>
         </div>
         <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
             <div class="gutter-container">
                 <h5>Real-Time Anomaly Detection</h5>
-                <p>AI-based models allow proactive real-time traffic monitoring to reduce risks instantly.</p>
+                <p>AI-based models allow proactive real-time traffic monitoring to reduce risks.</p>
             </div>
         </div>
         <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
             <div class="gutter-container">
                 <h5>Enhancing Cybersecurity with AI</h5>
-                <p>Machine learning helps detect subtle anomalies, providing adaptive security for your network.</p>
+                <p>Machine learning helps detect subtle anomalies, providing adaptive security network.</p>
             </div>
         </div>
     </div>

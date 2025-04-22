@@ -84,13 +84,14 @@ body.dark-mode {
 }
 
 /* Dark Mode Specific Text Colors */
-.dark-mode .container h1 {
-    color: azure; /* Change this to your preferred color for dark mode */
+body.dark-mode .container h1 {
+    color: azure;
 }
 
-.dark-mode .container p {
-    color: azure; /* Change this to your preferred color for dark mode */
+body.dark-mode .container p {
+    color: azure;
 }
+
 
 /* Scan button */
 #scan-btn {
