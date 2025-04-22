@@ -32,4 +32,4 @@ def capture_live_traffic(interface="Wi-Fi", packet_count=100):
     print("Captured packets saved to live_packets.csv")
 
 if __name__ == "__main__":
-    capture_live_traffic(interface="Wi-Fi", packet_count=50)
+    capture_live_traffic(interface="Wi-Fi", packet_count=10)

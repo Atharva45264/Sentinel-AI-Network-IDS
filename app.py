@@ -48,11 +48,11 @@ def scan():
 
         # Dummy traffic data (replace with real if available)
         traffic_data = [
-            {"time": "00:01", "count": 15},
-            {"time": "00:02", "count": 20},
-            {"time": "00:03", "count": 18},
-            {"time": "00:04", "count": 28},
-            {"time": "00:05", "count": 35}
+            {"time": "00:01", "count": 5},
+            {"time": "00:02", "count": 2},
+            {"time": "00:03", "count": 8},
+            {"time": "00:04", "count": 3},
+            {"time": "00:05", "count": 7}
         ]
 
         # Pie chart logic with safe fallback
