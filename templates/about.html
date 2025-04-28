@@ -1,199 +1,219 @@
-{% extends "index.html" %} {% block title %}About - Network Anomaly Detection{%endblock %} {% block content %}
-<style>
-    /* Smooth Hover Effect for Cards */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      backdrop-filter: blur(6px);
-      background-color: rgba(255, 255, 255, 0.85); /* light glass look */
-    }
+{% extends "index.html" %} 
+{% block title %}About - SentinelAI{% endblock %} 
+{% block content %}
 
-    .custom-font {
+<style>
+  /* General Styles for Consistency */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff; /* Make sure it aligns with primary color */
+  }
+
+  .card-text {
     font-size: 1rem;
-    line-height: 1.6;
-    }
+    color: #555;
+  }
+
+  .custom-font {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  #about {
+    padding-top: 6rem;  /* Adjusted to ensure it fits below the navbar */
+    padding-bottom: 4rem;
+  }
+
+  .bg-light-custom {
+    background-color: var(--bs-light);
+    transition: background-color 0.3s ease;
+    border-radius: 1rem;
+  }
+
+  .dark-mode .bg-light-custom {
+    background-color: #222;
+    color: #fff;
+  }
+
+  .glass {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+  }
+
+  .container {
+    padding-top: 750px; /* Fixed container padding to match layout consistency */
+  }
+
+  /* Matching Animations from network.html */
+  .animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
   
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    }
-  
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    .bg-light-custom {
-      background-color: var(--bs-light);
-      transition: background-color 0.3s ease;
-    }
-  
-    .dark-mode .bg-light-custom {
-      background-color: #222;
-      color: #fff;
-    }
-  
-    .glass {
-      backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: 1rem;
-    }
-  </style>
-  
-  <!-- About Section -->
-  <section id="about" class="container mt-5" style="padding-top: 800px">
-    <div class="row text-center mb-5">
-      <div class="col-12">
-        <h1 class="display-4 text-primary animate__animated animate__fadeInUp">
-          About This Project
-        </h1>
-        <p class="lead text-muted animate__animated animate__fadeInUp">
-          This project aims to detect network anomalies using machine learning
-          techniques.
+  .animate__fadeInUp {
+    animation-name: fadeInUp;
+  }
+
+  .animate__zoomIn {
+    animation-name: zoomIn;
+  }
+</style>
+
+<!-- About Section -->
+<section id="about" class="container mt-5 pt-5">
+  <div class="row text-center mb-5">
+    <div class="col-12">
+      <h1 class="display-4 text-primary animate__animated animate__fadeInUp">About This Project</h1>
+      <p class="lead text-muted animate__animated animate__fadeInUp">This project aims to detect network anomalies using machine learning techniques.</p>
+    </div>
+  </div>
+
+  <!-- Objective, Tech Stack, Features -->
+  <div class="row">
+    <!-- Objective -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp h-100" style="animation-delay: 0.2s;">
+        <div class="card-body">
+          <h5 class="card-title text-primary"><i class="bi bi-bullseye"></i> Objective</h5>
+          <p class="card-text custom-font text-dark">
+            Identify and alert users about abnormal network behavior such as
+            <strong>DDoS attacks</strong>, <strong>port scanning</strong>, and
+            <strong>unauthorized data exfiltration</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp h-100" style="animation-delay: 0.4s;">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-tools"></i> Technology Stack</h5>
+          <ul class="list-unstyled text-dark">
+            <li><i class="bi bi-file-code text-success"></i> <strong>Python</strong></li>
+            <li><i class="bi bi-server text-success"></i> <strong>Flask</strong></li>
+            <li><i class="bi bi-brain text-success"></i> <strong>TensorFlow</strong></li>
+            <li><i class="bi bi-bootstrap-fill text-success"></i> <strong>Bootstrap</strong></li>
+            <li><i class="bi bi-cpu text-success"></i> <strong>Machine Learning</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp h-100" style="animation-delay: 0.6s;">
+        <div class="card-body">
+          <h5 class="card-title"><i class="bi bi-star-fill"></i> Key Features</h5>
+          <ul class="list-unstyled text-dark">
+            <li><i class="bi bi-wifi text-success"></i> Real-time network packet capture</li>
+            <li><i class="bi bi-bar-chart-line text-success"></i> ML-based anomaly detection</li>
+            <li><i class="bi bi-globe text-success"></i> Intuitive Flask web interface</li>
+            <li><i class="bi bi-gear text-success"></i> Easily scalable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Overview -->
+  <div class="row mt-5 text-center">
+    <div class="col-12">
+      <div class="bg-primary text-white p-5 rounded animate__animated animate__zoomIn">
+        <h2>How Scanning and Anomaly Detection Work</h2>
+        <p class="lead">Understand how live network scanning and anomaly detection ensures robust, real-time protection.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Steps -->
+  <div class="row mt-5">
+    <!-- Step 1 -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+        <div class="card-body">
+          <h5 class="card-title text-primary"><i class="bi bi-router me-2"></i> Step 1: Network Packet Capture</h5>
+          <p class="card-text text-dark">
+            Captures live network packets using <strong>Wireshark</strong> or <strong>tcpdump</strong>. Includes details like IPs, protocol, and more.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+        <div class="card-body">
+          <h5 class="card-title text-primary"><i class="bi bi-funnel me-2"></i> Step 2: Preprocessing</h5>
+          <p class="card-text text-dark">
+            Converts raw packets to structured format: timestamp parsing, one-hot encoding, etc., for ML readiness.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+        <div class="card-body">
+          <h5 class="card-title text-primary"><i class="bi bi-graph-up me-2"></i> Step 3: Feature Scaling</h5>
+          <p class="card-text text-dark">
+            Uses <strong>StandardScaler</strong> to normalize features. This ensures balanced model input.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+        <div class="card-body">
+          <h5 class="card-title text-primary"><i class="bi bi-cpu me-2"></i> Step 4: Model Prediction</h5>
+          <p class="card-text text-dark">
+            The preprocessed data is fed to a <strong>trained deep learning model</strong> to detect network anomalies.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="col-md-8 offset-md-2 mb-4">
+      <div class="card shadow-lg animate__animated animate__fadeInUp text-center" style="animation-delay: 1s;">
+        <div class="card-body">
+          <h5 class="card-title text-primary"><i class="bi bi-exclamation-circle me-2"></i> Step 5: Anomaly Detection</h5>
+          <p class="card-text text-dark">
+            The system flags anomalies like <strong>DDoS</strong>, <strong>port scans</strong>, or <strong>unauthorized activity</strong> for real-time alerts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Importance -->
+  <div class="row mt-5 text-center">
+    <div class="col-12">
+      <div class="bg-light-custom p-5 rounded animate__animated animate__zoomIn">
+        <h3><i class="bi bi-shield-lock me-2"></i> Why Is This Important?</h3>
+        <p class="lead text-dark">
+          Anomaly detection prevents potential data loss or attacks by identifying threats in real-time — ensuring system security and peace of mind.
         </p>
       </div>
     </div>
-  
-    <!-- Objective, Tech Stack, Features -->
-    <div class="row">
-      <!-- Objective -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp h-100" style="animation-delay: 0.2s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-bullseye"></i> Objective</h5>
-            <p class="card-text text-dark custom-font">
-              Identify and alert users about abnormal network behavior such as
-              <strong>DDoS attacks</strong>, <strong>port scanning</strong>, and
-              <strong>unauthorized data exfiltration</strong>.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Tech Stack -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp h-100" style="animation-delay: 0.4s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-tools"></i> Technology Stack</h5>
-            <ul class="list-unstyled text-dark">
-              <li><i class="bi bi-file-code text-success"></i> <strong>Python</strong></li>
-              <li><i class="bi bi-server text-success"></i> <strong>Flask</strong></li>
-              <li><i class="bi bi-brain text-success"></i> <strong>TensorFlow</strong></li>
-              <li><i class="bi bi-bootstrap-fill text-success"></i> <strong>Bootstrap</strong></li>
-              <li><i class="bi bi-cpu text-success"></i> <strong>Machine Learning</strong></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Key Features -->
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp h-100" style="animation-delay: 0.6s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-star-fill"></i> Key Features</h5>
-            <ul class="list-unstyled text-dark">
-              <li><i class="bi bi-wifi text-success"></i> Real-time network packet capture</li>
-              <li><i class="bi bi-bar-chart-line text-success"></i> ML-based anomaly detection</li>
-              <li><i class="bi bi-globe text-success"></i> Intuitive Flask web interface</li>
-              <li><i class="bi bi-gear text-success"></i> Easily scalable</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Process Overview -->
-    <div class="row mt-5 text-center">
-      <div class="col-12">
-        <div class="bg-primary text-white p-5 rounded animate__animated animate__zoomIn">
-          <h2>How Scanning and Anomaly Detection Work</h2>
-          <p class="lead">
-            Understand how live network scanning and anomaly detection ensures
-            robust, real-time protection.
-          </p>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Steps -->
-    <div class="row mt-5">
-      <!-- Step 1 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-router me-2"></i> Step 1: Network Packet Capture</h5>
-            <p class="card-text text-dark">
-              Captures live network packets using <strong>Wireshark</strong> or <strong>tcpdump</strong>. Includes details like IPs, protocol, and more.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Step 2 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-funnel me-2"></i> Step 2: Preprocessing</h5>
-            <p class="card-text text-dark">
-              Converts raw packets to structured format: timestamp parsing, one-hot encoding, etc., for ML readiness.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Step 3 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-graph-up me-2"></i> Step 3: Feature Scaling</h5>
-            <p class="card-text text-dark">
-              Uses <strong>StandardScaler</strong> to normalize features. This ensures balanced model input.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Step 4 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-cpu me-2"></i> Step 4: Model Prediction</h5>
-            <p class="card-text text-dark">
-              The preprocessed data is fed to a <strong>trained deep learning model</strong> to detect network anomalies.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Step 5 -->
-      <div class="col-md-8 offset-md-2 mb-4">
-        <div class="card shadow-lg animate__animated animate__fadeInUp text-center" style="animation-delay: 1s">
-          <div class="card-body">
-            <h5 class="card-title text-primary"><i class="bi bi-exclamation-circle me-2"></i> Step 5: Anomaly Detection</h5>
-            <p class="card-text text-dark">
-              The system flags anomalies like <strong>DDoS</strong>, <strong>port scans</strong>, or <strong>unauthorized activity</strong> for real-time alerts.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Importance -->
-    <div class="row mt-5 text-center">
-      <div class="col-12">
-        <div class="bg-light-custom p-5 rounded animate__animated animate__zoomIn">
-          <h3><i class="bi bi-shield-lock me-2"></i> Why Is This Important?</h3>
-          <p class="lead text-dark">
-            Anomaly detection prevents potential data loss or attacks by identifying threats in real-time — ensuring system security and peace of mind.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+  </div>
+
+</section>
+
 {% endblock %}
