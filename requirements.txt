@@ -2,7 +2,7 @@ flask
 flask_cors
 pandas
 gunicorn
-tensorflow
+tensorflow-cpu
 scikit-learn
 numpy
 matplotlib
